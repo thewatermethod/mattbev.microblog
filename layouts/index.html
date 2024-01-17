@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<div class="masthead">
+    <div class="masthead-inner">
+        <div class="station-id">
+            <h1 class="site-title--home metal">{{ site.Title }}</h1>
+
+            <ul class="who">
+                <li>Developer</li>
+                <li><a href="mailto:matt@mattbev.com">matt@mattbev.com</a></li>
+                <li>
+                    You can find me on
+                    <a href="https://github.com/thewatermethod">Github</a> or
+                    <a href="https://gitlab.com/thewatermethod">Gitlab</a>.
+                </li>
+            </ul>
+        </div>
+
+        {{- with resources.Get "img/logo.jpg" }}
+            <img src="{{ .RelPermalink }}" alt="{{ site.Title }}" class="site-logo">
+        {{- end }}
+    </div>
+</div>
+
+{{ range site.RegularPages.Limit 10 }}
+<article class="article article--home">
+    {{if .Params.external_url}}
+    <h2 class="article-heading article-heading--external"><a href="{{ .Params.external_url }}">{{ .LinkTitle }}</a></h2>
+    <blockquote>{{ .Summary }}</blockquote>
+    {{else}}
+    <h2 class="article-heading"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+    {{end}}    
+</article>
+{{ end }}
+
+{{ end }}

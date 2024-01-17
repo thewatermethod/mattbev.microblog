@@ -1,0 +1,214 @@
+:root {
+  /* color vars */
+  --blackest-pitch: #000;
+  --moderate-pitch: #222;
+  --curdled-cream: #fffff7;
+  --hardend-blood: #8b0000;
+  --murky-depths: #0b2275;
+  --haunted-smoke: #ddd;
+
+  /* width and layout vars */
+  --the-widest-we-go: 800px;
+}
+
+/* nuke everything */
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* baseline type */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 20px;
+}
+
+@font-face {
+  font-family: "Ultimate Black Metal";
+  src: url("/XXII-Ultimate-Black-Metal.ttf");
+}
+
+.metal {
+  font-family: "Ultimate Black Metal";
+}
+
+/* screenreaders-only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* base colors */
+body {
+  background: var(--curdled-cream);
+  color: var(--moderate-pitch);
+}
+
+a {
+  color: var(--hardend-blood);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* typography */
+
+* {
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* header */
+.site-header {
+  background-color: var(--blackest-pitch);
+  color: var(--curdled-cream);
+  padding: 1rem;
+  text-align: center;
+}
+
+.nav-menu {
+  margin: 0 auto;
+  max-width: var(--the-widest-we-go);
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: var(--curdled-cream);
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+/* home page masthead */
+.masthead {
+  background-color: var(--blackest-pitch);
+  color: var(--curdled-cream);
+  margin-bottom: 1rem;
+}
+
+.masthead h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  padding: 1rem;
+}
+
+.masthead a,
+.masthead a:visited {
+  color: var(--curdled-cream);
+}
+
+.masthead-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  margin: 0 auto;
+  max-width: var(--the-widest-we-go);
+}
+
+.masthead-inner ul {
+  list-style: none;
+}
+
+.masthead-inner li {
+  margin-bottom: 1rem;
+}
+
+.masthead-inner img {
+  max-width: 400px;
+}
+
+.article {
+  margin: 1rem auto;
+  max-width: var(--the-widest-we-go);
+}
+
+.article--home {
+  margin-bottom: 3rem;
+}
+
+.article-heading {
+  font-weight: normal;
+}
+
+.article-heading--external a {
+  color: var(--murky-depths);
+}
+
+.article-heading--external:before {
+  content: "🔗";
+  margin-right: 0.5rem;
+}
+
+.article-date {
+  display: block;
+  /* font-family: monospace; */
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.article blockquote:empty {
+  display: none;
+}
+
+.article blockquote {
+  border-left: 0.5rem solid var(--haunted-smoke);
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+.article ul {
+  margin-left: 1rem;
+}
+
+.article li {
+  margin-bottom: 0.5rem;
+}
+
+.article pre:has(code) {
+  padding: 1rem;
+}
+
+.site-footer {
+  background-color: var(--blackest-pitch);
+  color: var(--curdled-cream);
+  padding: 1rem;
+  text-align: center;
+}

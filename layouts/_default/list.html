@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <div class="article">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+  {{ range .Pages }}
+  <article class="article article--home">
+    {{if .Params.external_url}}
+    <h2 class="article-heading article-heading--external"><a href="{{ .Params.external_url }}">{{ .LinkTitle }}</a></h2>
+    <blockquote>{{ .Summary }}</blockquote>
+    {{else}}
+    <h2 class="article-heading"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ .Summary }}
+    {{end}}    
+  </article>
+  {{ end }}
+{{ end }}
