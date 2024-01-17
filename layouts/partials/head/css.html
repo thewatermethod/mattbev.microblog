@@ -1,3 +1,18 @@
+{{- with resources.Get "fonts/XXII-Ultimate-Black-Metal.ttf" }}
+  <style>
+    @font-face {
+      font-family: "Ultimate Black Metal";
+      src: url("{{ .RelPermalink }}");
+    }
+
+    .metal {
+      font-family: "Ultimate Black Metal";
+    }
+  </style>
+
+  {{- end }}
+{{- end }}
+
 {{- with resources.Get "css/main.css" }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
